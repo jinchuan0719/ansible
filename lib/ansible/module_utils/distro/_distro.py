@@ -814,6 +814,12 @@ class LinuxDistribution(object):
                     break
         if pretty and version and self.codename():
             version = u'{0} ({1})'.format(version, self.codename())
+        
+        if version == 'v7Update6':
+            version = '7.6'
+        elif version == 'v8Update':
+            version = '8.10'
+            
         return version
 
     def version_parts(self, best=False):
